@@ -17,10 +17,10 @@ pub fn checker(accounts: &[AccountInfo], bump: [u8; 1]) -> ProgramResult {
 
     // Check that the owner of the vault is the maker
     assert_eq!(&fundraiser_account.maker(), unsafe {
-        &TokenAccount::from_account_info_unsafe(maker_ta).authority()
+        &TokenAccount::from_account_info_unchecked(maker_ta)?.authority()
     });
 
-    let vault_account = unsafe { TokenAccount::from_account_info_unsafe(vault) };
+    let vault_account = unsafe { TokenAccount::from_account_info_unchecked(vault)? };
     // Save the current amount of the vault
     let amount = vault_account.amount();
 
