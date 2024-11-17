@@ -503,7 +503,15 @@ mod tests {
                 (vault, vault_account),
                 (token_program, token_program_account),
             ],
-            &[Check::success()],
+            &[
+                // Check::account(&contributor)
+                //     .lamports(1_000_000_000 + 26)
+                //     .build(),
+                Check::account(&contributor_account)
+                    .lamports(0)
+                    .build(),
+                Check::success(),
+            ],
         );
     }
 

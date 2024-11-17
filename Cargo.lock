@@ -1606,7 +1606,11 @@ dependencies = [
 
 [[package]]
 name = "pinocchio-token"
+<<<<<<< Updated upstream
 version = "0.1.0"
+=======
+version = "0.2.0"
+>>>>>>> Stashed changes
 dependencies = [
  "pinocchio",
  "pinocchio-pubkey",
